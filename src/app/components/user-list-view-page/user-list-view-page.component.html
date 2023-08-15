@@ -1,1 +1,48 @@
-<p>user-list-view-page works!</p>
+<div class="container">
+
+  <div class="title">
+    <h1>Lista dos usuários</h1>
+  </div>
+
+  <div class="container-new-user">
+    <button mat-raised-button color="primary">Criar novo usuário</button>
+  </div>
+
+  <div class="container-card">
+    <mat-card class="card-item" *ngFor="let item of dataUser">
+      <mat-card-header>
+        <mat-card-title>{{item.firstName}}</mat-card-title>
+        <mat-card-subtitle>{{item.lastName}}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <img src="{{item.picture}}">
+      </mat-card-content>
+      <mat-card-actions>
+        <button
+          mat-raised-button
+          color="warn"
+          (click)="deleteUser(item.id)"
+        >
+         Deletar usuário
+        </button>
+        <button
+          mat-raised-button
+          color="primary"
+          [routerLink]="['detalhe-usuario', item.id]"
+          routerLinkActive="active"
+        >
+         Detalhes usuário
+        </button>
+        <button
+          mat-raised-button
+          color="red"
+        >
+          Editar usuário
+        </button>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+
+
+</div>
