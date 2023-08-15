@@ -10,7 +10,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UserListViewPageComponent {
 
   dataUser: any;
-
+  isLoading = false
 
   constructor(
     private userListViewPageService: UserListViewPageService,
@@ -22,8 +22,10 @@ export class UserListViewPageComponent {
   }
 
   getUser() {
-    this.userListViewPageService.getData().subscribe(response => {
+    this.isLoading = true;
+    this.userListViewPageService.getUser().subscribe(response => {
       this.dataUser = response.data
+      this.isLoading = false;
       console.log('data', response); // Lida com a resposta da API
     });
   }

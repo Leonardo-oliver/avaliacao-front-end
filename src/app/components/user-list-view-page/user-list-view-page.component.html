@@ -1,11 +1,22 @@
-<div class="container">
+
+<div class="container-loading">
+  <mat-spinner  *ngIf="isLoading" mode="indeterminate"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!isLoading">
 
   <div class="title">
-    <h1>Lista dos usuários</h1>
+    <h1>List of users</h1>
   </div>
 
+
   <div class="container-new-user">
-    <button mat-raised-button color="primary">Criar novo usuário</button>
+    <button
+     mat-raised-button
+     color="primary"
+     [routerLink]="['/cadastro-novo-usuario']"
+     routerLinkActive="active"
+     >Create new user</button>
   </div>
 
   <div class="container-card">
@@ -23,7 +34,7 @@
           color="warn"
           (click)="deleteUser(item.id)"
         >
-         Deletar usuário
+          Delete user
         </button>
         <button
           mat-raised-button
@@ -31,18 +42,19 @@
           [routerLink]="['detalhe-usuario', item.id]"
           routerLinkActive="active"
         >
-         Detalhes usuário
+          User details
         </button>
         <button
           mat-raised-button
           color="red"
+          [routerLink]="['editar-usuario', item.id]"
+          routerLinkActive="active"
         >
-          Editar usuário
+          Edit user
         </button>
       </mat-card-actions>
     </mat-card>
-
   </div>
-
-
 </div>
+
+

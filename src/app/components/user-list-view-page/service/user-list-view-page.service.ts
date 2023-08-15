@@ -15,18 +15,24 @@ export class UserListViewPageService {
 
   private getHeaders(): HttpHeaders {
     return new HttpHeaders({
-      // 'Content-Type': 'application/json',
       'app-id': '64cbeddd253549dc8b990b71'
     });
   }
 
-  getData(): Observable<any> {
+  getUser(): Observable<any> {
     const url = `${this.baseUrl}/user`;
     const headers = this.getHeaders();
     return this.http.get(url, { headers });
   }
 
-  deleteUser(params: {}): Observable<any> {
+
+  listSpecificUser(params: any): Observable<any> {
+    const url = `${this.baseUrl}/user/${params}`;
+    const headers = this.getHeaders();
+    return this.http.get(url, { headers });
+  }
+
+  deleteUser(params: any): Observable<any> {
     const url = `${this.baseUrl}/user/${params}`;
     const headers = this.getHeaders();
     return this.http.delete(url, { headers });

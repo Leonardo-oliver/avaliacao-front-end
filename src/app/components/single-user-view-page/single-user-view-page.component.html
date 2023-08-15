@@ -1,1 +1,49 @@
-<p>single-user-view-page works!</p>
+
+<div class="container-loading">
+  <mat-spinner  *ngIf="isLoading" mode="indeterminate"></mat-spinner>
+</div>
+
+<div class="container" *ngIf="!isLoading">
+
+  <div class="title">
+    <h1>User Detail</h1>
+  </div>
+
+  <div class="container-user-data">
+
+    <mat-card class="card-item" *ngFor="let item of dataUser">
+      <mat-card-header>
+        <div class="card-image">
+          <img src="{{item.picture}}">
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <mat-card-title>{{item?.title}}</mat-card-title>
+        <mat-card-subtitle><span class="title-span">Name: </span>{{item?.firstName}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">lastName </span>{{item?.lastName}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">E-mail: </span>{{item?.email}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">Gender: </span>{{item?.gender}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">Phone: </span>{{item?.phone}}</mat-card-subtitle>
+        <mat-card-title>Address</mat-card-title>
+        <mat-card-subtitle><span class="title-span">City: </span>{{item?.location?.city}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">State: </span>{{item?.location?.state}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">Street: </span>{{item?.location?.street}}</mat-card-subtitle>
+        <mat-card-subtitle><span class="title-span">Timezone: </span>{{item?.location?.timezone}}</mat-card-subtitle>
+        <mat-card-title>Date Of Birth </mat-card-title>
+        <mat-card-subtitle>{{item?.dateOfBirth}}</mat-card-subtitle>
+      </mat-card-content>
+      <mat-card-actions>
+        <div class="container-button-sigle">
+          <button
+           mat-raised-button
+           color="primary"
+           [routerLink]="['/']"
+           routerLinkActive="active"
+
+           >Back to user list</button>
+        </div>
+      </mat-card-actions>
+    </mat-card>
+
+  </div>
+</div>

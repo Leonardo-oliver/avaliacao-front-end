@@ -5,11 +5,12 @@ import { SingleUserViewPageComponent } from './components/single-user-view-page/
 import { UpdateUserDataPageComponent } from './components/update-user-data-page/update-user-data-page.component';
 import { UserCreationPageComponent } from './components/user-creation-page/user-creation-page.component';
 
+
 const routes: Routes = [
   { path: '', component: UserListViewPageComponent },
   { path: 'detalhe-usuario/:id', component: SingleUserViewPageComponent },
   { path: 'editar-usuario/:id', component: UpdateUserDataPageComponent },
-  { path: 'cadastro-novo-usuario/:id', component: UserCreationPageComponent },
+  { path: 'cadastro-novo-usuario', component: UserCreationPageComponent },
 
 ];
 
