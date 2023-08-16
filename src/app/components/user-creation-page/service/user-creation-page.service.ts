@@ -28,4 +28,11 @@ export class UserCreationPageService {
     return this.http.post(url, user, { headers });
   }
 
+  updateUser(user: UserModel, idUser: any): Observable<any> {
+    const url = `${this.baseUrl}/user/${idUser}`;
+    const headers = this.getHeaders();
+
+    return this.http.put(url, user, { headers });
+  }
+
 }

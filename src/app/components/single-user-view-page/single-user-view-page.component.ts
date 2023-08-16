@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { UserListViewPageService } from '../user-list-view-page/service/user-list-view-page.service';
 
 @Component({
@@ -16,7 +16,6 @@ export class SingleUserViewPageComponent {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
     private userListViewPageService: UserListViewPageService,
   ) { }
 
@@ -30,7 +29,7 @@ export class SingleUserViewPageComponent {
     this.userListViewPageService.listSpecificUser(this.idUser).subscribe(response => {
       this.dataUser.push(response)
       this.isLoading = false;
-      console.log('novooo', this.dataUser)
+      console.log('novooo edicao', this.dataUser)
     });
   }
 
