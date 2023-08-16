@@ -15,7 +15,6 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
-import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -37,8 +36,6 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     FormsModule,
     MatInputModule,
     MatIconModule,
-    MatDatepickerModule,
-
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -43,9 +43,7 @@ export class UserListViewPageComponent {
           this.dataUser.splice(this.dataUser.indexOf(idUser), 1);
           this.getUser();
           this.alertSucessError = false;
-
         }, 2000)
-
       }
     }, error => {
       this.alertError = true;
@@ -54,5 +52,4 @@ export class UserListViewPageComponent {
       }, 2000);
     })
   }
-
 }

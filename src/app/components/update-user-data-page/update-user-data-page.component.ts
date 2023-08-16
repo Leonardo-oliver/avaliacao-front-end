@@ -75,7 +75,6 @@ export class UpdateUserDataPageComponent {
 
       const formattedDate = this.formatarData(data.dateOfBirth)
 
-      // Use o patchValue para definir campos específicos retornados da API
       this.form.patchValue({
         title: data.title,
         firstName: data.firstName,

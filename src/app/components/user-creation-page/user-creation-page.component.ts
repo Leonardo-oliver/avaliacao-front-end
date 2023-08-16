@@ -50,9 +50,7 @@ export class UserCreationPageComponent implements OnInit {
 
   }
 
-
   registerUser() {
-
     const locationData = {
       street: this.form.get('street')?.value,
       city: this.form.get('city')?.value,
