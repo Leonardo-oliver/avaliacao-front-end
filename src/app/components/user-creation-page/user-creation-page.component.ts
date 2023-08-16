@@ -13,8 +13,8 @@ export class UserCreationPageComponent implements OnInit {
 
   form!: FormGroup
 
-  mensagemSucessoError: string = 'Usuário Cadastrado com sucesso!';
-  mensagemErro: string = 'Erro ao cadastrar, tente novamente mais tarde!';
+  mensagemSucessoError: string = 'Success registered user!';
+  mensagemErro: string = 'Error registering, please try again later!';
   alertSucessError = false;
   alertError = false;
 

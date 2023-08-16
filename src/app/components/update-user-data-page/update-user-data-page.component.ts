@@ -20,8 +20,8 @@ export class UpdateUserDataPageComponent {
 
   isLoading = false
 
-  mensagemSucessoError: string = 'Alteração feita com sucesso!';
-  mensagemErro: string = 'Erro ao alterar, tente novamente mais tarde!';
+  mensagemSucessoError: string = 'Change made success!';
+  mensagemErro: string = 'Error changing, please try again later!';
   alertSucessError = false;
   alertError = false;
 

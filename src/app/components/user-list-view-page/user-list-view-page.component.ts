@@ -12,8 +12,8 @@ export class UserListViewPageComponent {
   dataUser: any;
   isLoading = false
 
-  mensagemSucessoError: string = 'Usuário removido!';
-  mensagemErro: string = 'Erro ao remover, tente novamente mais tarde!';
+  mensagemSucessoError: string = 'User removed!';
+  mensagemErro: string = 'Error removing, please try again later!';
   alertSucessError = false;
   alertError = false;
 
