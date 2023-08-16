@@ -15,6 +15,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { DateMaskPipe } from './utils/date-mask.pipe';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { MatIconModule } from '@angular/material/icon';
     UserListViewPageComponent,
     SingleUserViewPageComponent,
     UserCreationPageComponent,
-    UpdateUserDataPageComponent
+    UpdateUserDataPageComponent,
+    DateMaskPipe
   ],
   imports: [
     BrowserModule,

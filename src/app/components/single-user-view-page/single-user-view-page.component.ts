@@ -24,10 +24,13 @@ export class SingleUserViewPageComponent {
     this.getUser();
   }
 
+
+
   getUser() {
     this.isLoading = true;
     this.userListViewPageService.listSpecificUser(this.idUser).subscribe(response => {
       this.dataUser.push(response)
+
       this.isLoading = false;
     });
   }

@@ -30,7 +30,7 @@
         <mat-card-subtitle><span class="title-span">Street: </span>{{item?.location?.street}}</mat-card-subtitle>
         <mat-card-subtitle><span class="title-span">Timezone: </span>{{item?.location?.timezone}}</mat-card-subtitle>
         <mat-card-title>Date Of Birth </mat-card-title>
-        <mat-card-subtitle>{{item?.dateOfBirth}}</mat-card-subtitle>
+        <mat-card-subtitle>{{item?.dateOfBirth | dateMask}}</mat-card-subtitle>
       </mat-card-content>
       <mat-card-actions>
         <div class="container-button-sigle">
