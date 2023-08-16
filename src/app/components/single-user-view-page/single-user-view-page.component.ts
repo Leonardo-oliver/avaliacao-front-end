@@ -29,7 +29,6 @@ export class SingleUserViewPageComponent {
     this.userListViewPageService.listSpecificUser(this.idUser).subscribe(response => {
       this.dataUser.push(response)
       this.isLoading = false;
-      console.log('novooo', this.dataUser)
     });
   }
 
