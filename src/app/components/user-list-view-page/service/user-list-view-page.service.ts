@@ -26,14 +26,14 @@ export class UserListViewPageService {
   }
 
 
-  listSpecificUser(params: any): Observable<any> {
-    const url = `${this.baseUrl}/user/${params}`;
+  listSpecificUser(idUser: any): Observable<any> {
+    const url = `${this.baseUrl}/user/${idUser}`;
     const headers = this.getHeaders();
     return this.http.get(url, { headers });
   }
 
-  deleteUser(params: any): Observable<any> {
-    const url = `${this.baseUrl}/user/${params}`;
+  deleteUser(idUser: any): Observable<any> {
+    const url = `${this.baseUrl}/user/${idUser}`;
     const headers = this.getHeaders();
     return this.http.delete(url, { headers });
   }

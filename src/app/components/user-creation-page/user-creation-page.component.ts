@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserCreationPageService } from './service/user-creation-page.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,7 +20,8 @@ export class UserCreationPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
-    private userCreationPageService: UserCreationPageService
+    private userCreationPageService: UserCreationPageService,
+    private router: Router
   ) {
   }
 
@@ -77,6 +79,7 @@ export class UserCreationPageComponent implements OnInit {
         setTimeout(() => {
           this.startForm();
           this.alertSucessError = false;
+          this.router.navigate(['/']);
         }, 2000)
       }
     }, error => {

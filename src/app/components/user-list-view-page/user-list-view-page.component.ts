@@ -36,7 +36,6 @@ export class UserListViewPageComponent {
 
   deleteUser(idUser: any) {
     this.userListViewPageService.deleteUser(idUser).subscribe(res => {
-
       if (res) {
         this.alertSucessError = true;
         setTimeout(() => {

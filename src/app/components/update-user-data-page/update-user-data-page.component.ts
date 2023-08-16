@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { UserCreationPageService } from '../user-creation-page/service/user-creation-page.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserListViewPageService } from '../user-list-view-page/service/user-list-view-page.service';
 import { DatePipe } from '@angular/common';
 
@@ -30,7 +30,8 @@ export class UpdateUserDataPageComponent {
     private fb: FormBuilder,
     private userCreationPageService: UserCreationPageService,
     private userListViewPageService: UserListViewPageService,
-    private datePipe: DatePipe
+    private datePipe: DatePipe,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -124,6 +125,7 @@ export class UpdateUserDataPageComponent {
         this.alertSucessError = true;
         setTimeout(() => {
           this.alertSucessError = false;
+          this.router.navigate(['/']);
         }, 2000)
       }
     }, error => {
