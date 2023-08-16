@@ -9,6 +9,62 @@
   height: 100%;
 }
 
+.container-card-msg-sucess {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 40px;
+
+
+  &::ng-deep {
+    mat-card {
+      flex: 1 1 150px;
+      margin: 20px 10px;
+      background-color: #4CAF50;
+      color: #fff
+    }
+
+    mat-card-content {
+      text-align: center !important
+    }
+  }
+}
+
+.container-card-msg-error {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+  justify-content: center;
+  margin: 0 auto;
+  margin-top: 40px;
+
+  &::ng-deep {
+    mat-card {
+      flex: 1 1 150px;
+      margin: 20px 10px;
+      background-color: #F44338;
+      color: #fff
+    }
+
+    mat-card-content {
+      text-align: center !important
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .container-card-msg-sucess {
+    width: 80%;
+  }
+
+  .container-card-msg-error {
+    width: 80%;
+  }
+
+}
+
 .container {
   max-width: 960px;
   margin: 0 auto;

@@ -3,18 +3,29 @@
   <mat-spinner  *ngIf="isLoading" mode="indeterminate"></mat-spinner>
 </div>
 
+<div class="container-card-msg-sucess" *ngIf="alertSucessError">
+  <mat-card >
+    <mat-card-content>{{mensagemSucessoError}}</mat-card-content>
+  </mat-card>
+</div>
+
+<div class="container-card-msg-error" *ngIf="alertError">
+  <mat-card >
+    <mat-card-content>{{mensagemErro}}</mat-card-content>
+  </mat-card>
+</div>
+
 <div class="container" *ngIf="!isLoading">
 
   <div class="title">
     <h1>List of users</h1>
   </div>
 
-
   <div class="container-new-user">
     <button
      mat-raised-button
      color="primary"
-     [routerLink]="['/cadastro-novo-usuario']"
+     [routerLink]="['/registration-new-user']"
      routerLinkActive="active"
      >Create new user</button>
   </div>
@@ -39,7 +50,7 @@
         <button
           mat-raised-button
           color="primary"
-          [routerLink]="['detalhe-usuario', item.id]"
+          [routerLink]="['user-detail', item.id]"
           routerLinkActive="active"
         >
           User details
@@ -47,7 +58,7 @@
         <button
           mat-raised-button
           color="red"
-          [routerLink]="['editar-usuario', item.id]"
+          [routerLink]="['edit-user', item.id]"
           routerLinkActive="active"
         >
           Edit user

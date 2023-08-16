@@ -12,6 +12,11 @@ export class UserListViewPageComponent {
   dataUser: any;
   isLoading = false
 
+  mensagemSucessoError: string = 'Usuário removido!';
+  mensagemErro: string = 'Erro ao remover, tente novamente mais tarde!';
+  alertSucessError = false;
+  alertError = false;
+
   constructor(
     private userListViewPageService: UserListViewPageService,
 
@@ -26,15 +31,28 @@ export class UserListViewPageComponent {
     this.userListViewPageService.getUser().subscribe(response => {
       this.dataUser = response.data
       this.isLoading = false;
-      console.log('data', response); // Lida com a resposta da API
     });
   }
 
   deleteUser(idUser: any) {
-    this.userListViewPageService.deleteUser(idUser).subscribe(response => {
-      this.dataUser.push(response);
-      this.dataUser.splice(this.dataUser.indexOf(idUser), 1);
-      this.getUser();
+    this.userListViewPageService.deleteUser(idUser).subscribe(res => {
+
+      if (res) {
+        this.alertSucessError = true;
+        setTimeout(() => {
+          this.dataUser.push(res);
+          this.dataUser.splice(this.dataUser.indexOf(idUser), 1);
+          this.getUser();
+          this.alertSucessError = false;
+
+        }, 2000)
+
+      }
+    }, error => {
+      this.alertError = true;
+      setTimeout(() => {
+        this.alertError = false;
+      }, 2000);
     })
   }
 

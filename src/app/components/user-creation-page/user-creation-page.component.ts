@@ -12,6 +12,11 @@ export class UserCreationPageComponent implements OnInit {
 
   form!: FormGroup
 
+  mensagemSucessoError: string = 'Usuário Cadastrado com sucesso!';
+  mensagemErro: string = 'Erro ao cadastrar, tente novamente mais tarde!';
+  alertSucessError = false;
+  alertError = false;
+
   constructor(
     private fb: FormBuilder,
     private userCreationPageService: UserCreationPageService
@@ -66,8 +71,19 @@ export class UserCreationPageComponent implements OnInit {
       location: locationData,
     };
 
-    this.userCreationPageService.createUser(payload).subscribe(response => {
-
+    this.userCreationPageService.createUser(payload).subscribe(res => {
+      if (res) {
+        this.alertSucessError = true;
+        setTimeout(() => {
+          this.startForm();
+          this.alertSucessError = false;
+        }, 2000)
+      }
+    }, error => {
+      this.alertError = true;
+      setTimeout(() => {
+        this.alertError = false;
+      }, 2000);
     })
   }
 }

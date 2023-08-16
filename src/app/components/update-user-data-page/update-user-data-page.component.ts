@@ -13,13 +13,17 @@ import { DatePipe } from '@angular/common';
 })
 export class UpdateUserDataPageComponent {
 
-
   form!: FormGroup
 
   idUser: any
   dataUser: any[] = [];
 
   isLoading = false
+
+  mensagemSucessoError: string = 'Alteração feita com sucesso!';
+  mensagemErro: string = 'Erro ao alterar, tente novamente mais tarde!';
+  alertSucessError = false;
+  alertError = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -57,20 +61,16 @@ export class UpdateUserDataPageComponent {
   }
 
   formatarData(dataString: any) {
-    // Verifique se a data é válida antes de tentar formatá-la
     const date = new Date(dataString);
     if (isNaN(date.getTime())) {
       return 'Data inválida';
     }
-
     return this.datePipe.transform(dataString, 'MM/dd/yyyy');
   }
 
   getUser() {
     this.isLoading = true;
     this.userListViewPageService.listSpecificUser(this.idUser).subscribe(data => {
-
-      // const formattedDate = this.datePipe.transform(data.dateOfBirth, 'yyyy/MM/dd');
 
       const formattedDate = this.formatarData(data.dateOfBirth)
 
@@ -97,8 +97,8 @@ export class UpdateUserDataPageComponent {
     });
   }
 
-  editUser(event: any) {
-    event.preventDefault();
+  editUser() {
+
     const locationData = {
       street: this.form.get('street')?.value,
       city: this.form.get('city')?.value,
@@ -120,12 +120,18 @@ export class UpdateUserDataPageComponent {
     };
 
     this.userCreationPageService.updateUser(payload, this.idUser).subscribe(res => {
-      console.log('usuario editado', res)
+      if (res) {
+        this.alertSucessError = true;
+        setTimeout(() => {
+          this.alertSucessError = false;
+        }, 2000)
+      }
+    }, error => {
+      this.alertError = true;
+      setTimeout(() => {
+        this.alertError = false;
+      }, 2000);
     })
-  }
-  onSubmit(event: Event): void {
-    event.preventDefault(); // Impede o comportamento padrão de submissão
-    // Seu código de envio de formulário aqui
   }
 
 }

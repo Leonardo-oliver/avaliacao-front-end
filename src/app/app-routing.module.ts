@@ -8,9 +8,9 @@ import { UserCreationPageComponent } from './components/user-creation-page/user-
 
 const routes: Routes = [
   { path: '', component: UserListViewPageComponent },
-  { path: 'detalhe-usuario/:id', component: SingleUserViewPageComponent },
-  { path: 'editar-usuario/:id', component: UpdateUserDataPageComponent },
-  { path: 'cadastro-novo-usuario', component: UserCreationPageComponent },
+  { path: 'user-detail/:id', component: SingleUserViewPageComponent },
+  { path: 'edit-user/:id', component: UpdateUserDataPageComponent },
+  { path: 'registration-new-user', component: UserCreationPageComponent },
 
 ];
 
