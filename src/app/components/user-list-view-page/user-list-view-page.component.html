@@ -27,7 +27,7 @@
      color="primary"
      [routerLink]="['/registration-new-user']"
      routerLinkActive="active"
-     >Create new user</button>
+     > <mat-icon>add</mat-icon>  Create new user</button>
   </div>
 
   <div class="container-card">
@@ -45,7 +45,7 @@
           color="warn"
           (click)="deleteUser(item.id)"
         >
-          Delete user
+        <mat-icon>delete</mat-icon>  Delete
         </button>
         <button
           mat-raised-button
@@ -53,7 +53,7 @@
           [routerLink]="['user-detail', item.id]"
           routerLinkActive="active"
         >
-          User details
+        <mat-icon>account_box</mat-icon>  Details
         </button>
         <button
           mat-raised-button
@@ -61,7 +61,7 @@
           [routerLink]="['edit-user', item.id]"
           routerLinkActive="active"
         >
-          Edit user
+        <mat-icon>edit</mat-icon>  Edit
         </button>
       </mat-card-actions>
     </mat-card>

@@ -108,9 +108,13 @@
 
 ::ng-deep mat-card-actions {
 
+  justify-content: space-between;
+
   .mat-mdc-raised-button {
     height: 50px !important;
   }
+
+
 
   button {
     height: 50px;
