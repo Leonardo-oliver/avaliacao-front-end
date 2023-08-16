@@ -60,7 +60,11 @@
   width: 25%;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 40px;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  right: 0;
+  z-index: 2;
 
 
   &::ng-deep {
@@ -83,7 +87,11 @@
   width: 25%;
   justify-content: center;
   margin: 0 auto;
-  margin-top: 40px;
+  position: fixed;
+  top: 40%;
+  left: 0;
+  right: 0;
+  z-index: 2;
 
   &::ng-deep {
     mat-card {
