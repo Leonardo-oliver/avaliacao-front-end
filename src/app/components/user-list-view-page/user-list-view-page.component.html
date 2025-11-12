@@ -1,16 +1,15 @@
-
 <div class="container-loading">
-  <mat-spinner  *ngIf="isLoading" mode="indeterminate"></mat-spinner>
+  <mat-spinner *ngIf="isLoading" mode="indeterminate"></mat-spinner>
 </div>
 
 <div class="container-card-msg-sucess" *ngIf="alertSucessError">
-  <mat-card >
+  <mat-card>
     <mat-card-content>{{mensagemSucessoError}}</mat-card-content>
   </mat-card>
 </div>
 
 <div class="container-card-msg-error" *ngIf="alertError">
-  <mat-card >
+  <mat-card>
     <mat-card-content>{{mensagemErro}}</mat-card-content>
   </mat-card>
 </div>
@@ -18,16 +17,11 @@
 <div class="container" *ngIf="!isLoading">
 
   <div class="title">
-    <h1>List of users</h1>
+    <h1>Nova Lista de usuarios</h1>
   </div>
 
   <div class="container-new-user">
-    <button
-     mat-raised-button
-     color="primary"
-     [routerLink]="['/registration-new-user']"
-     routerLinkActive="active"
-     > <mat-icon>add</mat-icon>  Create new user</button>
+    <button mat-raised-button color="primary" [routerLink]="['/registration-new-user']" routerLinkActive="active"> <mat-icon>add</mat-icon> Create new user</button>
   </div>
 
   <div class="container-card">
@@ -40,32 +34,16 @@
         <img src="{{item.picture}}">
       </mat-card-content>
       <mat-card-actions>
-        <button
-          mat-raised-button
-          color="primary"
-          [routerLink]="['user-detail', item.id]"
-          routerLinkActive="active"
-        >
-        <mat-icon>account_box</mat-icon>  Details
+        <button mat-raised-button color="primary" [routerLink]="['user-detail', item.id]" routerLinkActive="active">
+          <mat-icon>account_box</mat-icon> Details
         </button>
-        <button
-          mat-raised-button
-          color="red"
-          [routerLink]="['edit-user', item.id]"
-          routerLinkActive="active"
-        >
-        <mat-icon>edit</mat-icon>  Edit
+        <button mat-raised-button color="red" [routerLink]="['edit-user', item.id]" routerLinkActive="active">
+          <mat-icon>edit</mat-icon> Edit
         </button>
-        <button
-          mat-raised-button
-          color="warn"
-          (click)="deleteUser(item.id)"
-        >
-        <mat-icon>delete</mat-icon>  Delete
+        <button mat-raised-button color="warn" (click)="deleteUser(item.id)">
+          <mat-icon>delete</mat-icon> Delete
         </button>
       </mat-card-actions>
     </mat-card>
   </div>
 </div>
-
-
